@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+        }
+
+        #flower-container {
+            margin-top: 20px;
+        }
+
+        .flower {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Click the Button to See Flowers!</h1>
+    <button onclick="showFlowers()">Show Flowers</button>
+
+    <div id="flower-container"></div>
+
+    <script>
+        function showFlowers() {
+            const flowerContainer = document.getElementById('flower-container');
+            flowerContainer.innerHTML = ''; // Clear any existing flowers
+
+            const flowerImages = [
+                'https://example.com/flower1.jpg', // Replace with actual image URLs
+                'https://example.com/flower2.jpg',
+                'https://example.com/flower3.jpg'
+            ];
+
+            flowerImages.forEach(image => {
+                const imgElement = document.createElement('img');
+                imgElement.src = image;
+                imgElement.alt = 'Flower';
+                imgElement.className = 'flower';
+                flowerContainer.appendChild(imgElement);
+            });
+        }
+    </script>
+</body>
+</html>
